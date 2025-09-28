@@ -17,6 +17,8 @@ public class LuckyHolePlugin : BaseUnityPlugin
         Utils.PLogger = Logger;
         
         Harmony.CreateAndPatchAll(typeof(LuckyHolePlugin).Assembly, PGuid);
-        Logger.LogInfo($"{PName} ({PVersion}) loaded!");
+        Logger.LogInfo($"{PName} ({PVersion}) loaded! Commands will load once the game loads a save.");
+        
+        AssetManager.LoadAssets("LuckyHole.bundle");
     }
 }

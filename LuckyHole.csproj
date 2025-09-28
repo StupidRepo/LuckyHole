@@ -43,7 +43,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <EmbeddedResource Include="$(AssetBundle)" />
+            <EmbeddedResource Include="$(AssetBundle)" LogicalName="LuckyHole.bundle" />
     </ItemGroup>
 
     <Target Name="CopyOutputFileToGame" AfterTargets="Build">

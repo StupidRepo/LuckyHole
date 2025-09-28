@@ -18,7 +18,7 @@ public class Currency : ICommandGroup
         });
         
         // Double coins
-        Utils.MakeCommand(["damnrich", "dr"], "Doubles your coins.", () =>
+        Utils.MakeCommand(["damnrich", "*c"], "Doubles your coins.", () =>
         {
             GameplayData.CoinsAdd(GameplayData.CoinsGet(), false);
         });
@@ -32,7 +32,7 @@ public class Currency : ICommandGroup
             () => { GameplayData.CloverTicketsAdd(100, false); });
         
         // Double tickets
-        Utils.MakeCommand(["tickettycoon", "tty"], "Doubles your tickets.",
+        Utils.MakeCommand(["tickettycoon", "*t"], "Doubles your tickets.",
             () => { GameplayData.CloverTicketsAdd(GameplayData.CloverTicketsGet(), false); });
         #endregion
         #region Interest Rate
@@ -59,18 +59,18 @@ public class Currency : ICommandGroup
         });
         
         // Double interest rate
-        Utils.MakeCommand(["doubleinterest", "dbi"], "Doubles your interest rate.", () =>
+        Utils.MakeCommand(["x2 interest", "*i"], "Doubles your interest rate.", () =>
         {
             GameplayData.InterestRateAdd(GameplayData.InterestRateGet());
         });
         
         // Max interest rate
-        Utils.MakeCommand(["maxinterest", "maxi"], "Sets your interest rate to the maximum (100%).", () =>
+        Utils.MakeCommand(["maxinterest", "!i"], "Sets your interest rate to the maximum (100%).", () =>
         {
             GameplayData.InterestRateSet(1000f);
         });
         // Reset interest rate
-        Utils.MakeCommand(["didn't ask", "dask"], "Resets your interest rate to the default (7%).", () =>
+        Utils.MakeCommand(["resetinterest", ".i"], "Resets your interest rate to the default (7%).", () =>
         {
             GameplayData.InterestRateSet(7f);
         });

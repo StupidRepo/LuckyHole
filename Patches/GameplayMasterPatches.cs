@@ -3,7 +3,7 @@
 namespace LuckyHole.Patches;
 
 [HarmonyPatch(typeof(GameplayMaster))]
-public class RegisterCommands
+public class GameplayMasterPatches
 {
     [HarmonyPatch(nameof(GameplayMaster.Start))]
     [HarmonyPostfix]
