@@ -39,20 +39,26 @@ public abstract class APowerUp : AHaveTranslations
         
         AssetMaster.AddPrefab(prefabToAdd);
         PowerupScript.dict_IdentifierToPrefabName.Add(ID, prefabToAdd.name);
-        
-        Utils.PLogger.LogInfo($"Registered assets for powerup {ID} with prefab '{prefabToAdd.name}'!");
         return true;
     }
 
     public bool RegisterPowerup()
     {
-        PowerupScript.Spawn(ID).Initialize(
-            false,
-            Category, ID, Archetype,
-            IsInstantPowerup,
-            MaxBuyTimes, StoreRerollChance, StartingPrice, UnlockPrice,
-            NameKey, DescriptionKey, UnlockMissionKey,
-            OnEquip, OnUnequip, OnPutInDrawer, OnThrowAway);
+        try
+        {
+            PowerupScript.Spawn(ID).Initialize(
+                false,
+                Category, ID, Archetype,
+                IsInstantPowerup,
+                MaxBuyTimes, StoreRerollChance, StartingPrice, UnlockPrice,
+                NameKey, DescriptionKey, UnlockMissionKey,
+                OnEquip, OnUnequip, OnPutInDrawer, OnThrowAway);
+        } catch (System.Exception ex)
+        {
+            Utils.PLogger.LogError($"Error registering powerup {ID}: {ex}");
+            return false;
+        }
+
         return true;
     }
     

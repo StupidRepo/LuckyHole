@@ -32,8 +32,6 @@ public abstract class AHaveTranslations
             Utils.PLogger.LogError($"Failed to add/update translations for language '{langCode}'.");
             return false;
         }
-
-        Utils.PLogger.LogInfo($"Registered {Translations.Count} translation terms for {allLanguageCodes.Count} languages.");
         return true;
     }
 }
