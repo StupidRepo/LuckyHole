@@ -40,7 +40,7 @@ public class PowerupGoldenPony : APowerUp
         Utils.PLogger.LogInfo("Golden Pony triggered.");
         
         PowerupScript.PlayTriggeredAnimation(Utils.GoldenPony);
-        if (R.Rng_Powerup(Utils.GoldenPony).Value <= 0.35f)
+        if (R.Rng_Powerup(Utils.GoldenPony).Value <= 0.35f * GameplayData.ActivationLuckGet())
         {
             // TODO: trigger 1-5 jackpots
             SlotMachineScript.Symbol_ReplaceAllVisible(GameplayData.Symbol_GetRandom_BasedOnSymbolChance(), SymbolScript.Modifier.none, true);

@@ -10,11 +10,11 @@ public class PowerupGiftBox : APowerUp
 
     protected override string NameKey { get; } = POWERUP_NAME_PREFIX + "GIFTBOX";
     protected override string DescriptionKey { get; } = POWERUP_DESC_PREFIX + "GIFTBOX";
-    protected override string UnlockMissionKey { get; } = "POWERUP_UNLOCK_MISSION_ONE_TRICK_PONY";
+    protected override string UnlockMissionKey { get; } = "POWERUP_UNLOCK_MISSION_NONE";
 
     protected override int MaxBuyTimes { get; } = -1;
     protected override int StartingPrice { get; } = 3;
-    protected override float StoreRerollChance { get; } = 0.5f;
+    protected override float StoreRerollChance { get; } = 0.15f;
 
     public override bool RegisterAssets(string name)
     {
@@ -38,7 +38,7 @@ public class PowerupGiftBox : APowerUp
     
     private static void Trigger()
     {
-        if (R.Rng_Powerup(Utils.Giftbox).Value >= 0.90f) return;
+        if (R.Rng_Powerup(Utils.Giftbox).Value >= 0.10f * GameplayData.ActivationLuckGet()) return;
         var randIndex = R.Rng_Powerup(Utils.Giftbox).Value * AbilityScript.list_All.Count % AbilityScript.list_All.Count;
         
         var abilityScript = AbilityScript.list_All[(int)randIndex];
@@ -46,7 +46,6 @@ public class PowerupGiftBox : APowerUp
         Utils.PLogger.LogInfo($"Gift Box triggered! Activating random ability {ability.IdentifierGet()}.");
         
         PowerupScript.PlayTriggeredAnimation(Utils.Giftbox);
-        SlotMachineScript.instance.SetTopScreenText(ability.NameGetTranslated());
         
         ability.Pick();
 
