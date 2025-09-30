@@ -18,20 +18,7 @@ public class PowerupGiftBox : APowerUp
 
     public override bool RegisterAssets(string name)
     {
-        var soundAsset = AssetManager.GetAsset<AudioClip>("ModSound_Powerup_WrapBox");
-        if (soundAsset != null)
-        {
-            AssetMaster.AddSound(soundAsset);
-            AssetMaster.AddSound(soundAsset, true);
-            
-            AssetMaster.AddSound(soundAsset, true);
-            AssetMaster.AddSound(soundAsset);
-            
-        }
-        else
-        {
-            Utils.PLogger.LogWarning("Failed to load sound asset for Gift Box powerup.");
-        }
+        AssetMaster.AddSound(AssetManager.GetAsset<AudioClip>("ModSound_Powerup_WrapBox"));
         return base.RegisterAssets("powerup giftbox");
     }
 
