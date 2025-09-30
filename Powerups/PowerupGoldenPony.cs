@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using Panik;
-using UnityEngine;
+﻿using Panik;
 
 namespace LuckyHole.Powerups;
 
@@ -9,27 +7,27 @@ public class PowerupGoldenPony : APowerUp
     public static bool ShouldGiveJackpots = false;
     
     public override PowerupScript.Identifier ID { get; } = Utils.GoldenPony;
-    
-    public override string NameKey { get; } = POWERUP_NAME_PREFIX + "GOLDEN_PONY";
-    public override string DescriptionKey { get; } = POWERUP_DESC_PREFIX + "GOLDEN_PONY";
-    public override string UnlockMissionKey { get; } = "POWERUP_UNLOCK_MISSION_ONE_TRICK_PONY";
 
-    public override int MaxBuyTimes { get; } = 1;
-    public override int StartingPrice { get; } = 4;
-    public override float StoreRerollChance { get; } = 0.35f;
+    protected override string NameKey { get; } = POWERUP_NAME_PREFIX + "GOLDEN_PONY";
+    protected override string DescriptionKey { get; } = POWERUP_DESC_PREFIX + "GOLDEN_PONY";
+    protected override string UnlockMissionKey { get; } = "POWERUP_UNLOCK_MISSION_ONE_TRICK_PONY";
+
+    protected override int MaxBuyTimes { get; } = 1;
+    protected override int StartingPrice { get; } = 4;
+    protected override float StoreRerollChance { get; } = 0.25f;
 
     public override bool RegisterAssets(string name)
     {
         return base.RegisterAssets("powerup golden pony");
     }
 
-    public override PowerupScript.PowerupEvent OnEquip { get; } = _ =>
+    protected override PowerupScript.PowerupEvent OnEquip { get; } = _ =>
     {
         SlotMachineScript.instance.OnRoundBeing += PowerupScript.OneTrickPony_EvaluateTargetSpin_AtRoundBegin;
         SlotMachineScript.instance.OnScoreEvaluationBegin += Trigger;
     };
 
-    public override PowerupScript.PowerupEvent OnUnequip { get; } = _ =>
+    protected override PowerupScript.PowerupEvent OnUnequip { get; } = _ =>
     {
         SlotMachineScript.instance.OnRoundBeing -= PowerupScript.OneTrickPony_EvaluateTargetSpin_AtRoundBegin;
         SlotMachineScript.instance.OnScoreEvaluationBegin -= Trigger;

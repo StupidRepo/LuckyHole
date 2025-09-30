@@ -11,22 +11,22 @@ public abstract class APowerUp : AHaveTranslations
     internal static readonly string POWERUP_DESC_PREFIX = "POWERUP_DESC_";
     
     public abstract PowerupScript.Identifier ID { get; }
-    public virtual PowerupScript.Category Category { get; } = PowerupScript.Category.normal;
-    public virtual PowerupScript.Archetype Archetype { get; } = PowerupScript.Archetype.generic;
+    protected virtual PowerupScript.Category Category { get; } = PowerupScript.Category.normal;
+    protected virtual PowerupScript.Archetype Archetype { get; } = PowerupScript.Archetype.generic;
 
-    public abstract string NameKey { get; }
-    public abstract string DescriptionKey { get; }
-    public abstract string UnlockMissionKey { get; }
-    
-    public virtual bool IsInstantPowerup { get; } = false;
+    protected abstract string NameKey { get; }
+    protected abstract string DescriptionKey { get; }
+    protected abstract string UnlockMissionKey { get; }
 
-    public abstract int MaxBuyTimes { get; }
-    
-    public virtual int StartingPrice { get; } = 2;
-    public virtual BigInteger UnlockPrice { get; } = -1L;
-    
-    public virtual float StoreRerollChance { get; } = 0.5f;
+    protected virtual bool IsInstantPowerup { get; } = false;
 
+    protected abstract int MaxBuyTimes { get; }
+
+    protected virtual int StartingPrice { get; } = 2;
+    protected virtual BigInteger UnlockPrice { get; } = -1L;
+
+    protected virtual float StoreRerollChance { get; } = 0.5f;
+    
     public virtual bool RegisterAssets(string name)
     {
         var prefabToAdd = AssetManager.GetAsset<GameObject>(name);
@@ -38,7 +38,9 @@ public abstract class APowerUp : AHaveTranslations
         }
         
         AssetMaster.AddPrefab(prefabToAdd);
-        PowerupScript.dict_IdentifierToPrefabName.Add(ID, prefabToAdd.name);
+        
+        if(!PowerupScript.dict_IdentifierToPrefabName.ContainsKey(ID))
+            PowerupScript.dict_IdentifierToPrefabName.Add(ID, prefabToAdd.name);
         return true;
     }
 
@@ -53,7 +55,7 @@ public abstract class APowerUp : AHaveTranslations
                 MaxBuyTimes, StoreRerollChance, StartingPrice, UnlockPrice,
                 NameKey, DescriptionKey, UnlockMissionKey,
                 OnEquip, OnUnequip, OnPutInDrawer, OnThrowAway);
-        } catch (System.Exception ex)
+        } catch (Exception ex)
         {
             Utils.PLogger.LogError($"Error registering powerup {ID}: {ex}");
             return false;
@@ -61,10 +63,10 @@ public abstract class APowerUp : AHaveTranslations
 
         return true;
     }
-    
-    public abstract PowerupScript.PowerupEvent OnEquip { get; }
-    public abstract PowerupScript.PowerupEvent OnUnequip { get; }
 
-    public virtual PowerupScript.PowerupEvent? OnPutInDrawer { get; } = null;
-    public virtual PowerupScript.PowerupEvent? OnThrowAway { get; } = null;
+    protected abstract PowerupScript.PowerupEvent OnEquip { get; }
+    protected abstract PowerupScript.PowerupEvent OnUnequip { get; }
+
+    protected virtual PowerupScript.PowerupEvent? OnPutInDrawer { get; } = null;
+    protected virtual PowerupScript.PowerupEvent? OnThrowAway { get; } = null;
 }

@@ -18,7 +18,7 @@ public class PowerupScriptPatches
         // PowerupScript.Spawn(...).Initialize(...);
         // for each powerup. we will add our own powerups after all of the new() lines have been called.
         var codes = new List<CodeInstruction>(instructions);
-        
+
         var insertIndex = codes.FindLastIndex(ci =>
             (ci.opcode == OpCodes.Callvirt || ci.opcode == OpCodes.Call) &&
             ci.operand is MethodInfo { Name: "Spawn" } mi &&

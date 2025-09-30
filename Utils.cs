@@ -103,45 +103,56 @@ internal static class Utils
     // }
     public static void RegisterPowerups()
     {
+        PLogger.LogInfo($"RegisterPowerups called from {new System.Diagnostics.StackTrace()}");
         PLogger.LogInfo("Registering custom powerups...");
 
         foreach (var powerup in typeof(LuckyHolePlugin).Assembly.GetTypes()
-                     .Where(t => t.IsClass && !t.IsAbstract && t.IsSubclassOf(typeof(APowerUp)))
+                     .Where(t => typeof(APowerUp).IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract)
                      .Select(t => Activator.CreateInstance(t) as APowerUp))
         {
             if (powerup == null) continue;
-            PLogger.LogInfo($"Registering powerup {powerup.ID}...");
-            if (!powerup.RegisterTranslations())
+            try
             {
-                PLogger.LogError($"Failed to register translations for powerup {powerup.ID}.");
-                continue;
-            }
-            if (!powerup.RegisterAssets(powerup.ID.ToString().ToLower()))
+                PLogger.LogInfo($"Registering powerup {powerup.ID}...");
+                if (!powerup.RegisterTranslations())
+                {
+                    PLogger.LogError($"Failed to register translations for powerup {powerup.ID}.");
+                    continue;
+                }
+
+                if (!powerup.RegisterAssets(powerup.ID.ToString().ToLower()))
+                {
+                    PLogger.LogError($"Failed to register assets for powerup {powerup.ID}.");
+                    continue;
+                }
+
+                if (!powerup.RegisterPowerup())
+                {
+                    PLogger.LogError($"Failed to register powerup {powerup.ID}.");
+                    continue;
+                }
+
+                PLogger.LogInfo($"Registered powerup {powerup.ID} successfully.");
+            } catch (Exception ex)
             {
-                PLogger.LogError($"Failed to register assets for powerup {powerup.ID}.");
-                continue;
+                PLogger.LogError($"Error registering powerup {powerup.ID}: {ex}");
             }
-            if (!powerup.RegisterPowerup()) 
-            {
-                PLogger.LogError($"Failed to register powerup {powerup.ID}.");
-                continue;
-            }
-            PLogger.LogInfo($"Registered powerup {powerup.ID} successfully.");
         }
         
         PLogger.LogInfo("Finished registering custom powerups.");
     }
 
     #region Custom Abilities
-    private const AbilityScript.Identifier ModAbilityIdentifierOffset = AbilityScript.Identifier.count + 10;
+    private const AbilityScript.Identifier ModAbilityIdentifierOffset = AbilityScript.Identifier.count + 5;
     // ---start
     internal const AbilityScript.Identifier TestAbility = ModAbilityIdentifierOffset + 1;
     // ---end
     #endregion
     #region Custom Powerups
-    private const PowerupScript.Identifier ModPowerupIdentifierOffset = PowerupScript.Identifier.count + 10;
+    private const PowerupScript.Identifier ModPowerupIdentifierOffset = PowerupScript.Identifier.count + 5;
     // ---start
     internal const PowerupScript.Identifier GoldenPony = ModPowerupIdentifierOffset + 1;
+    internal const PowerupScript.Identifier Giftbox = ModPowerupIdentifierOffset + 2;
     // --- end
     #endregion
 }
