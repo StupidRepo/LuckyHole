@@ -6,3 +6,5 @@ riderModule.iml
 *.csproj.user
 *.DotSettings.user
 .idea/
+AssetBundle/*.manifest
+AssetBundle/AssetBundle
