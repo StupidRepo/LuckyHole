@@ -18,7 +18,7 @@ public class PowerupGiftBox : APowerUp
 
     public override bool RegisterAssets(string name)
     {
-        AssetMaster.AddSound(AssetManager.GetAsset<AudioClip>("ModSound_Powerup_WrapBox"));
+        AssetMaster.AddSound(AssetManager.GetAsset<AudioClip>("ModSound_Powerup_WrapBox")); // todo: fix fmod issue not loading sound because "file not found"
         return base.RegisterAssets("powerup giftbox");
     }
 
@@ -46,6 +46,8 @@ public class PowerupGiftBox : APowerUp
         Utils.PLogger.LogInfo($"Gift Box triggered! Activating random ability {ability.IdentifierGet()}.");
         
         PowerupScript.PlayTriggeredAnimation(Utils.Giftbox);
+        SlotMachineScript.instance.SetTopScreenText(ability.NameGetTranslated());
+        
         ability.Pick();
 
         if (!(R.Rng_Powerup(Utils.Giftbox).Value <= 0.1f)) return;

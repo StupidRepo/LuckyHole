@@ -53,8 +53,7 @@ public static class AssetManager
             }
         }
         
-        assetBundle.Unload(false);
-        Utils.PLogger.LogInfo("Assets from asset bundle were loaded, and the asset bundle has now been unloaded from memory.");
+        Utils.PLogger.LogInfo("Assets from asset bundle were loaded.");
     }
     
     public static T? GetAsset<T>(string assetName) where T : UnityEngine.Object
