@@ -38,12 +38,11 @@ public class PowerupGiftBox : APowerUp
     
     private static void Trigger()
     {
-        if (R.Rng_Powerup(Utils.Giftbox).Value >= 0.10f * GameplayData.ActivationLuckGet()) return;
+        if (R.Rng_Powerup(Utils.Giftbox).Value >= 0.025f * GameplayData.ActivationLuckGet()) return;
         var randIndex = R.Rng_Powerup(Utils.Giftbox).Value * AbilityScript.list_All.Count % AbilityScript.list_All.Count;
         
         var abilityScript = AbilityScript.list_All[(int)randIndex];
         var ability = AbilityScript.AbilityGet(abilityScript.IdentifierGet());
-        Utils.PLogger.LogInfo($"Gift Box triggered! Activating random ability {ability.IdentifierGet()}.");
         
         PowerupScript.PlayTriggeredAnimation(Utils.Giftbox);
         
@@ -51,7 +50,6 @@ public class PowerupGiftBox : APowerUp
 
         if (!(R.Rng_Powerup(Utils.Giftbox).Value <= 0.1f)) return;
         
-        Utils.PLogger.LogInfo($"Gift Box discarded after use.");
         PowerupScript.ThrowAway(Utils.Giftbox, false);
     }
     
@@ -63,7 +61,7 @@ public class PowerupGiftBox : APowerUp
         {
             POWERUP_DESC_PREFIX + "GIFTBOX", (["en"],
             [
-                "[K_RANDOM_ACTIVATION] (5%):\n" +
+                "[K_RANDOM_ACTIVATION] (2.5%):\n" +
                 "Picks a random ability and applies it. 10% chance of discarding afterwards."
             ])
         },
