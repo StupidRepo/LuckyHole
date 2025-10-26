@@ -40,7 +40,7 @@ internal static class Utils
             if (string.IsNullOrEmpty(name))
             {
                 PLogger.LogWarning(
-                    $"Language '{language}' does not have a valid I2 name, skipping translation for term '{term}'.");
+                    $"Language '{language}' doesn't exist? Skipping translation for term '{term}'.");
                 continue;
             }
             

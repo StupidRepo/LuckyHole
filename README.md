@@ -2,7 +2,7 @@
 Probably the first ever CloverPit mod.
 
 ## Features
-- <details>
+<details>
         <summary>2 new items! (click/tap to reveal)</summary>
         <table>
             <tr>
@@ -33,8 +33,9 @@ Probably the first ever CloverPit mod.
                 </td>
             </tr>
         </table>
-    </details>
-- <details>
+</details>
+
+<details>
     <summary>Many new commands! (click/tap to reveal)</summary>
     <table>
         <tr>
@@ -134,3 +135,6 @@ Probably the first ever CloverPit mod.
         </tr>
     </table>
 </details>
+
+## License
+MIT - see [LICENSE](LICENSE) for more information.
