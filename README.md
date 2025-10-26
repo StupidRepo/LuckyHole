@@ -15,8 +15,8 @@ Probably the first ever CloverPit mod.
             <td>Grants a random phone ability <strong>permanently</strong>. 10% chance of discarding afterwards.</td>
             <td>
                 <ul>
-                    <li><img alt="10% chance to trigger randomly" src="https://placehold.co/700x100/0000/BBAC00?text=10%+chance+to+trigger+randomly."/></li>
-                    <li><span style="color: #BB0000;">10% chance to randomly <strong>discard</strong> after trigger.</span></li>
+                    <img alt="10% chance to trigger randomly." src="https://placehold.co/700x100/0000/BBAC00?text=10%+chance+to+trigger+randomly."/>
+                    <img alt="10% chance to discard after being triggered." src="https://placehold.co/700x100/0000/BB0000?text=10%+chance+to+discard+after+being+triggered."/>
                 </ul>
             </td>
         </tr>
