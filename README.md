@@ -25,7 +25,7 @@ Probably the first ever CloverPit mod.
             <td>TBW.</td>
             <td>
                 <ul>
-                    <li><span style="color: #BBAC00;">To be written.</span></li>
+                    <li><font color="#BBAC00;">To be written.</font></li>
                 </ul>
             </td>
         </tr>
