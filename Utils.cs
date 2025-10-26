@@ -36,7 +36,18 @@ internal static class Utils
 
         foreach (var (language, localizedValue) in translation.LocalizedValues)
         {
-            newTerm.SetTranslation((int)language, localizedValue);
+            var name = Translation.languagesI2Names[(int)language];
+            if (string.IsNullOrEmpty(name))
+            {
+                PLogger.LogWarning(
+                    $"Language '{language}' does not have a valid I2 name, skipping translation for term '{term}'.");
+                continue;
+            }
+            
+            var languageIndex = data.GetLanguageIndex(name);
+            if (languageIndex < 0) continue;
+            
+            newTerm.SetTranslation(languageIndex, localizedValue);
             PLogger.LogInfo(
                 $"Added new translation for term '{term}' in language '{Translation.languagesI2Names[(int)language] ?? "Unknown"}'.");
         }
