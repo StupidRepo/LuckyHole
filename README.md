@@ -1,7 +1,7 @@
-﻿<h1>LuckyHole</h1>
+﻿# LuckyHole
 Probably the first ever CloverPit mod.
 
-<h2>Features</h2>
+## Features
 - <details>
     <summary>2 new items! (click/tap to reveal)</summary>
     <table>
