@@ -26,10 +26,7 @@ Probably the first ever CloverPit mod.
             <td>
                 <ul>
                     <li>
-                        <svg width="100" height="20">
-                            <rect width="100" height="20" style="fill: #FFD700;" />
-                            <text x="50" y="15" font-family="Arial" font-size="12" fill="black" text-anchor="middle">TBW</text>
-                        </svg>
+                        <body bgcolor="green">10% chance to trigger randomly.</body>
                     </li>
                 </ul>
             </td>
