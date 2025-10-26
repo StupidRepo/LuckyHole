@@ -11,7 +11,7 @@ public class GameplayDataPatches
     private static IEnumerable<CodeInstruction> RegisterOurPowerups(IEnumerable<CodeInstruction> instructions)
     {
         // first line sets an int variable called newSize to 164 (the current number of powerups)
-        // we need to change that to 500.
+        // we change that to 500 <3
         var codes = new List<CodeInstruction>(instructions);
         var index = codes.FindIndex(ci => ci.opcode == OpCodes.Ldc_I4 && ((int)ci.operand == 164 || (int)ci.operand == (int)PowerupScript.Identifier.count));
         if (index != -1) {

@@ -26,7 +26,11 @@ public abstract class APowerUp
 
     protected virtual float StoreRerollChance { get; } = 0.5f;
 
-    public abstract bool RegisterTranslations();
+    public virtual bool RegisterTranslations()
+    {
+        Utils.PLogger.LogWarning("RegisterTranslations not implemented for powerup " + ID + "!");
+        return false;
+    }
     
     public virtual bool RegisterAssets(string name)
     {

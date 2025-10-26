@@ -81,13 +81,17 @@ internal static class Utils
             try
             {
                 PLogger.LogInfo($"Registering powerup {powerup.ID}...");
-
+                
+                if(!powerup.RegisterTranslations()) 
+                {
+                    PLogger.LogError($"Failed to register translations for powerup {powerup.ID}.");
+                    continue;
+                }
                 if (!powerup.RegisterAssets(powerup.ID.ToString().ToLower()))
                 {
                     PLogger.LogError($"Failed to register assets for powerup {powerup.ID}.");
                     continue;
                 }
-
                 if (!powerup.RegisterPowerup())
                 {
                     PLogger.LogError($"Failed to register powerup {powerup.ID}.");

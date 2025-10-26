@@ -131,18 +131,4 @@ public class PowerupGiftBox : APowerUp
         
         PowerupScript.ThrowAway(Utils.Giftbox, false);
     }
-    
-    // protected override Dictionary<string, (List<string> languageCodes, List<string> translations)> Translations { get; } = new()
-    // {
-    //     {
-    //         POWERUP_NAME_PREFIX + "GIFTBOX", (["en"], ["Gift Box"])
-    //     },
-    //     {
-    //         POWERUP_DESC_PREFIX + "GIFTBOX", (["en"],
-    //         [
-    //             "[K_RANDOM_ACTIVATION] (2.5%):\n" +
-    //             "Picks a random ability and applies it. 10% chance of discarding afterwards."
-    //         ])
-    //     },
-    // };
 }
