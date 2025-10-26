@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-using BepInEx;
-using BepInEx.Logging;
+﻿using BepInEx;
 using HarmonyLib;
 
 namespace LuckyHole;

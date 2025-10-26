@@ -1,11 +1,10 @@
 ﻿using System.Numerics;
 using Panik;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace LuckyHole.Powerups;
 
-public abstract class APowerUp : AHaveTranslations
+public abstract class APowerUp
 {
     internal static readonly string POWERUP_NAME_PREFIX = "POWERUP_NAME_";
     internal static readonly string POWERUP_DESC_PREFIX = "POWERUP_DESC_";
@@ -26,6 +25,8 @@ public abstract class APowerUp : AHaveTranslations
     protected virtual BigInteger UnlockPrice { get; } = -1L;
 
     protected virtual float StoreRerollChance { get; } = 0.5f;
+
+    public abstract bool RegisterTranslations();
     
     public virtual bool RegisterAssets(string name)
     {

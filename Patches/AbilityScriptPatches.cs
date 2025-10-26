@@ -1,7 +1,4 @@
-﻿using System.Reflection;
-using System.Reflection.Emit;
-using HarmonyLib;
-using I2.Loc;
+﻿using HarmonyLib;
 
 namespace LuckyHole.Patches;
 

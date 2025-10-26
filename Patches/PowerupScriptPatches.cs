@@ -1,9 +1,6 @@
 ﻿using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
-using I2.Loc;
-using Panik;
-using UnityEngine;
 
 namespace LuckyHole.Patches;
 
