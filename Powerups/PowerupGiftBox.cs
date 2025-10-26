@@ -44,48 +44,48 @@ public class PowerupGiftBox : APowerUp
             {
                 [Translation.Language.English] =
                     "[K_RANDOM_ACTIVATION] (2.5%):\n" +
-                    "Picks a random ability and applies it. 10% chance of discarding afterwards.",
+                    "Grants a random telephone ability permanently. 10% chance of discarding afterward.",
                 [Translation.Language.Italian] =
                     "[K_RANDOM_ACTIVATION] (2,5%):\n" +
-                    "Sceglie un'abilità casuale e la applica. 10% di probabilità di scartarla in seguito.",
+                    "Concede permanentemente un'abilità telefonica casuale. 10% di probabilità di scartarla in seguito.",
                 [Translation.Language.French] =
                     "[K_RANDOM_ACTIVATION] (2,5%):\n" +
-                    "Choisit une compétence aléatoire et l'applique. 10% de chance d'être défaussé après.",
+                    "Accorde en permanence une compétence téléphonique aléatoire. 10% de chance d'être défaussé après.",
                 [Translation.Language.German] =
                     "[K_RANDOM_ACTIVATION] (2,5%):\n" +
-                    "Wählt eine zufällige Fähigkeit aus und wendet sie an. 10% Chance, danach weggeworfen zu werden.",
+                    "Gewährt dauerhaft eine zufällige Telefonfähigkeit. 10% Chance, danach weggeworfen zu werden.",
                 
                 [Translation.Language.Spanish] =
                     "[K_RANDOM_ACTIVATION] (2,5%):\n" +
-                    "Elige una habilidad aleatoria y la aplica. 10% de probabilidad de descartarse después.",
+                    "Otorga permanentemente una habilidad telefónica aleatoria. 10% de probabilidad de descartarse después.",
                 [Translation.Language.SpanishAmerica] =
                     "[K_RANDOM_ACTIVATION] (2,5%):\n" +
-                    "Elige una habilidad aleatoria y la aplica. 10% de probabilidad de descartarse después.",
+                    "Otorga permanentemente una habilidad telefónica aleatoria. 10% de probabilidad de descartarse después.",
                 
                 [Translation.Language.Portuguese] =
                     "[K_RANDOM_ACTIVATION] (2,5%):\n" +
-                    "Escolhe uma habilidade aleatória e a aplica. 10% de chance de ser descartado depois.",
+                    "Concede permanentemente uma habilidade telefônica aleatória. 10% de chance de ser descartado depois.",
                 [Translation.Language.PortugueseBrazil] =
                     "[K_RANDOM_ACTIVATION] (2,5%):\n" +
-                    "Escolhe uma habilidade aleatória e a aplica. 10% de chance de ser descartado depois.",
+                    "Concede permanentemente uma habilidade telefônica aleatória. 10% de chance de ser descartado depois.",
                 
                 [Translation.Language.ChineseSimplified] =
                     "[K_RANDOM_ACTIVATION] (2.5%):\n" +
-                    "随机选择一个能力并应用它。之后有10%的几率被丢弃。",
+                    "永久授予一个随机电话能力。之后有10%的几率被丢弃。",
                 [Translation.Language.Japanese] =
                     "[K_RANDOM_ACTIVATION] (2.5%):\n" +
-                    "ランダムにアビリティを選んで適用します。その後10%の確率で捨てられます。",
+                    "ランダムな電話アビリティを永久に付与します。その後10%の確率で捨てられます。",
                 
                 [Translation.Language.Ukraine] =
                     "[K_RANDOM_ACTIVATION] (2,5%):\n" +
-                    "Вибирає випадкову здібність і застосовує її. 10% шанс бути викинутим після цього.",
+                    "Надає випадкову телефонну здібність назавжди. 10% шанс бути викинутим після цього.",
                 [Translation.Language.Russian] =
                     "[K_RANDOM_ACTIVATION] (2,5%):\n" +
-                    "Выбирает случайную способность и применяет её. 10% шанс быть выброшенным после этого.",
+                    "Предоставляет случайную телефонную способность навсегда. 10% шанс быть выброшенным после этого.",
                 
                 [Translation.Language.Korean] =
                     "[K_RANDOM_ACTIVATION] (2.5%):\n" +
-                    "무작위 능력을 선택하여 적용합니다. 이후 10% 확률로 폐기됩니다.",
+                    "무작위 전화 능력을 영구적으로 부여합니다. 이후 10% 확률로 폐기됩니다.",
             }));
     }
 

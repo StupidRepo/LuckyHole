@@ -44,7 +44,7 @@ public class PowerupGoldenPony : APowerUp
             && Utils.AddNewTranslation(POWERUP_DESC_PREFIX + "GOLDEN_PONY", new Utils.ModLocalizedString(new Dictionary<Translation.Language, string>
             {
                 [Translation.Language.English] =
-                    "In the next round at the slot machine, grant up to <rainb>5 consecutive Jackpots</rainb> <sprite name=\"PtJ\"> (34%) or grant a 666 (66%). Then discard this charm.",
+                    "On the next round at the slot machine, grant up to <rainb>5 consecutive Jackpots</rainb> <sprite name=\"PtJ\"> (34%) or grant a 666 (66%). Then discard this charm.",
             }));
     }
 

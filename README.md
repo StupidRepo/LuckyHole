@@ -22,11 +22,11 @@ Probably the first ever CloverPit mod.
         </tr>
         <tr>
             <td><strong>Golden Pony</strong></td>
-            <td>34% chance to grant up to <strong>5 consequtive Jackpots</strong>, or a 66% chance of granting a <strong>666</strong>, on the next round at the slot machine.</td>
+            <td>34% chance to grant up to <strong>5 consecutive Jackpots</strong>, or a 66% chance of granting a <strong>666</strong>, on the next round at the slot machine.</td>
             <td>
                 <ul>
-                    <img alt="35% chance to trigger up to 5 consequtive Jackpots." src="https://placehold.co/700x100/0000/B6C826?text=35%+chance+to+trigger+up+to+5+consequtive+Jackpots."/>
-                    <img alt="65% chance to trigger 666." src="https://placehold.co/700x100/0000/BB0000?text=65%25+chance+to+trigger+666."/>
+                    <img alt="34% chance to trigger up to 5 consecutive Jackpots." src="https://placehold.co/700x100/0000/B6C826?text=36%+chance+to+trigger+up+to+5+consequtive+Jackpots."/>
+                    <img alt="66% chance to trigger 666." src="https://placehold.co/700x100/0000/BB0000?text=66%25+chance+to+trigger+666."/>
                     <hr/>
                     <img alt="Discards after being triggered." src="https://placehold.co/700x100/0000/BB0000?text=Discards+after+being+triggered."/>
                 </ul>
