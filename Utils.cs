@@ -65,42 +65,7 @@ internal static class Utils
         _ = new ConsolePrompt.Command(aliases, description, action);
         PLogger.LogInfo($"Command '{string.Join(", ", aliases)}' registered.");
     }
-
-    // public static void RegisterAbilities()
-    // {
-    //     PLogger.LogInfo("Registering custom powerups...");
-    //     
-    //     try {
-    //         AddNewTranslationsAndUpdate(new Dictionary<string, string>
-    //         {
-    //             { "POWERUP_NAME_GOLDEN_PONY", "Golden Pony" },
-    //             { "POWERUP_DESCR_GOLDEN_PONY", "Has a 50% chance of granting <rainb>1-3 Jackpots</rainb> <sprite name=\"PtJ\"> or triggering a 666, on the next round. Then, discard this charm." },
-    //         });
-    //     }
-    //     catch (Exception ex)
-    //     {
-    //         PLogger.LogError($"Error registering custom localization source: {ex}");
-    //     }
-    //     
-    //     try
-    //     {
-    //         // TODO: isNewGame (first arg) should represent it's actual value (instead of being hardcoded to false), but it's not even used anyway so we don't care
-    //         AssetMaster.AddPrefab(AssetManager.GetAsset<GameObject>("powerup golden pony"));
-    //         PowerupScript.dict_IdentifierToPrefabName.Add(GoldenPony, "Powerup Golden Pony");
-    //         
-    //         PowerupScript.Spawn(GoldenPony).Initialize(
-    //             false,
-    //             PowerupScript.Category.normal, GoldenPony, PowerupScript.Archetype.generic,
-    //             false,
-    //             -1, 0.35f, 4, -1L,
-    //             "POWERUP_NAME_GOLDEN_PONY", "POWERUP_DESCR_GOLDEN_PONY", "POWERUP_UNLOCK_MISSION_ONE_TRICK_PONY",
-    //             PowerupScript.PFunc_OnEquip_OneTrickPony, PowerupScript.PFunc_OnUnequip_OneTrickPony, null, null);
-    //     }
-    //     catch (Exception ex)
-    //     {
-    //         PLogger.LogError($"Error registering custom powerup: {ex}");
-    //     }
-    // }
+    
     public static void RegisterPowerups()
     {
         PLogger.LogInfo($"RegisterPowerups called from {new System.Diagnostics.StackTrace()}");
