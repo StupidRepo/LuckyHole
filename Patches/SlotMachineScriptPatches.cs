@@ -22,11 +22,13 @@ public class SlotMachineScriptPatches
         
         var jackpotsToGive = R.Rng_Powerup(Utils.GoldenPony).Range(1, 6);
         Utils.PLogger.LogInfo($"Golden Pony giving +{jackpotsToGive} extra jackpots.");
+        // log coins and positions to copy again for debugging
+        Utils.PLogger.LogInfo(_coins);
+        Utils.PLogger.LogInfo(_positionsToCopy);
         for (var i = 0; i < jackpotsToGive; i++)
         {
             SlotMachineScript.instance.PatternInfoSetup(
                 PatternScript.Kind.jackpot, _coins, _positionsToCopy);
-            
         }
     }
 }
